@@ -2,3 +2,6 @@
 config.json
 data_temp.json
 .env
+__pycache__/
+*.py[cod]
+*$py.class
