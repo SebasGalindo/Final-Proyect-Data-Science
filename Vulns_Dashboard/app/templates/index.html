@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% include "header.html" %} {% block content %}
+<div class="bg-white mx-auto py-15 sm:py-15">
+  <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    {% include "stats_section.html" %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 py-6 lg:grid-cols-3 gap-4">
+      <div>{% include "card.html" %}</div>
+      <div>{% include "card.html" %}</div>
+      <div>{% include "card.html" %}</div>
+      <div class="sm:col-span-2">{% include "card.html" %}</div>
+      <div>{% include "card.html" %}</div>
+      <div class="lg:row-start-3 lg:col-span-2">{% include "card.html" %}</div>
+      <div>{% include "card.html" %}</div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block footer %} {% include "footer.html" %} {% endblock %}
