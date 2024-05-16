@@ -1,3 +1,6 @@
 Flask
 flask_pymongo
 python-dotenv
+plotly
+pandas 
+requests
