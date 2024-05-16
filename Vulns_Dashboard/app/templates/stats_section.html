@@ -1,0 +1,38 @@
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">
+        Total Vulnerabilidades
+      </dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+      >
+        44 million
+      </dd>
+    </div>
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">Vulnerabilidades Críticas</dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+      >
+      {{ qty_critical_vulns }}
+      </dd>
+    </div>
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">Máquina Más Vulnerable</dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+      >
+      {{ most_vulnerable_machine }}
+      </dd>
+    </div>
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">Vulnerabilidades {{ current_year }}</dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+      >
+        {{ recent_vulns_qty }}
+      </dd>
+    </div>
+  </dl>
+</div>
