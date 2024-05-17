@@ -82,31 +82,31 @@ MONGO_VULNS_KEY= your_secret_key
 
 ## Code Structure
 
-***app/api***
+***app/api*** \
 Contains the routes and utilities for the application's API. This handles HTTP requests and responses related to vulnerability data.
 
-**routes.py**: Defines the API routes.
-**utilities.py**: Helper functions for the API.
+- **routes.py**: Defines the API routes.
+- **utilities.py**: Helper functions for the API.
 
-***app/config/***
+***app/config/*** \
 Contains the application's configuration.
 
-**config.py**: Application configurations.
+- **config.py**: Application configurations.
 
-***app/dashboard/***
+***app/dashboard/*** \
 Contains the logic for the dashboard, including controllers and models.
 
-**controllers.py**: Controllers that handle business logic.
-**models.py**: Data model definitions.
+- **controllers.py**: Controllers that handle business logic.
+- **models.py**: Data model definitions.
 
-***static/***
+***static/*** \
 Contains static files such as CSS, images, and JavaScript.
 
-***templates/***
+***templates/*** \
 Contains HTML templates used to render web pages.
 
-**base.html**: Base template for the application.
-**index.html**: Main page of the dashboard.
+- **base.html**: Base template for the application.
+- **index.html**: Main page of the dashboard.
 
 ## Running the Application
 
