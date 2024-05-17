@@ -5,6 +5,7 @@ This project is a vulnerability dashboard designed to visualize and manage secur
 ## Project Structure
 
 
+~~~ markdown
 FINAL-PROYECT-DATA-SCIENCE/
 ├── Notebook/
 │   └── DataCharge.ipynb
@@ -42,6 +43,7 @@ FINAL-PROYECT-DATA-SCIENCE/
 │   ├── run.py
 │   ├── .env
 │   └── README.md
+~~~
 
 ## Requirements
 
