@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% include "header.html" %}
+
+{% block content %}
+<div class="bg-white mx-auto py-15 sm:py-15">
+  <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    {% include "stats_section.html" %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 py-6 lg:grid-cols-4 gap-4">
+      <div class="sm:col-span-4"><div id="plot0" class="chart_card"></div></div>
+      <div class="sm:col-span-2"><div id="plot1" class="chart_card"></div></div>
+      <div class="sm:col-span-2"><div id="plot2" class="chart_card"></div></div>
+      <div class="sm:col-span-2"><div id="plot3" class="chart_card"></div></div>
+      <div class="sm:col-span-2"><div id="plot4" class="chart_card"></div></div>
+      <div class="sm:col-span-4"><div id="plot5" class="chart_card"></div></div>
+      <div class="sm:col-span-4"><div id="plot6" class="chart_card"></div></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+  const chartData = {{ chart_data | safe }};
+  {% for chart in chart_data %}
+  {
+    const chartJSON = JSON.parse(chartData[{{ loop.index0 }}]);
+    Plotly.react('plot{{ loop.index0 }}', chartJSON.data, chartJSON.layout);
+  }
+  {% endfor %}
+</script>
+{% endblock %}

@@ -1,0 +1,38 @@
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">
+        Total Vulnerabilities
+      </dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl fixed-height"
+      >
+      {{ total_vulnerabilities }}
+      </dd>
+    </div>
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">Critical Vulnerabilities</dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl fixed-height" 
+      >
+      {{ qty_critical_vulns }}
+      </dd>
+    </div>
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">Most Vulnerable Machine</dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl fixed-height "
+      >
+      {{ most_vulnerable_machine }}
+      </dd>
+    </div>
+    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">{{ current_year }} Vulnerabilities</dt>
+      <dd
+        class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl fixed-height"
+      >
+        {{ recent_vulns_qty }}
+      </dd>
+    </div>
+  </dl>
+</div>

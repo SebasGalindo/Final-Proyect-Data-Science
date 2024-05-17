@@ -1,6 +1,7 @@
 import os
 
 class Config:
+    DATABASE_NAME = os.getenv('DATABASE_NAME', 'default_database_name')
     CONTAINER_MACHINES = os.getenv('CONTAINER_MACHINES', 'default_url_machines')
     CONTAINER_SOFTWARES = os.getenv('CONTAINER_SOFTWARES', 'default_url_softwares')
     CONTAINER_CVES = os.getenv('CONTAINER_CVES', 'default_url_cves')
