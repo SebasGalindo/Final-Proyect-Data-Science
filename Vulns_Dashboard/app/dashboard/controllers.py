@@ -21,12 +21,13 @@ def dashboard_home():
     cves_version3_chart = data.get("cves_version3")
     
     recent_vulns_qty = data.get("recent_vulnerabilities_qty", 0)
-    most_vulnerable_machine = data.get("most_vulnerable_machine", {}).get('vuln_softwares_qty', 0)
+    most_vulnerable_machine = data.get("most_vulnerable_machine", {}).get('hostname', 0)
     qty_critical_vulns = data.get("qty_critical_vulns", 0)
+    total_vulnerabilities = data.get("total_vulnerabilities", 0)
 
     chart_data = [
         machines_most_vuln_chart ,top_ten_chart, impact_chart, riskiest_chart, 
         severity_across_time_chart, cves_version3_chart
     ]
 
-    return render_template('index.html', chart_data=chart_data, recent_vulns_qty=recent_vulns_qty, current_year=current_year, most_vulnerable_machine=most_vulnerable_machine, qty_critical_vulns=qty_critical_vulns)
+    return render_template('index.html', chart_data=chart_data, recent_vulns_qty=recent_vulns_qty, current_year=current_year, most_vulnerable_machine=most_vulnerable_machine, qty_critical_vulns=qty_critical_vulns,total_vulnerabilities=total_vulnerabilities)

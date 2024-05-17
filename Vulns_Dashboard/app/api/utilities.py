@@ -45,7 +45,10 @@ def chart_top_ten_vulnerable_softwares():
     
     # Create pie chart using Plotly
     fig = px.pie(names=names, values=vulnerabilities)
-    
+    # Update layout
+    fig.update_layout(
+        title="Most Vulnerable Software",
+    )
     # Return the JSON representation of the plot
     return pio.to_json(fig)
 
@@ -147,15 +150,17 @@ def most_vulnerable_machine():
     id_machines = []
     most_vulnerable_machine = {
         'id': 0,
-        'vuln_softwares_qty': 0
+        'vuln_softwares_qty': 0,
+        'hostname': ""
     }
     try:
-        id_machines = machines_clt.find({}, {'_id':0,'id': 1})
+        id_machines = machines_clt.find({}, {'_id':0,'id': 1, 'hostname': 1})
         for id in id_machines:
             vuln_softwares_qty = softwares_clt.count_documents({'associatedMachines': id['id'], 'vulnerabilities': {'$not': {'$size': 0}}})
             if vuln_softwares_qty > most_vulnerable_machine['vuln_softwares_qty']:
                 most_vulnerable_machine['id'] = id['id']
                 most_vulnerable_machine['vuln_softwares_qty'] = vuln_softwares_qty
+                most_vulnerable_machine['hostname'] = id['hostname']
     except Exception as e:
         print("Error getting the id machines list",e)
         
@@ -544,3 +549,23 @@ def radial_chart_cves_version3():
     )
     
     return pio.to_json(fig)
+
+def get_total_vulnerabilities():
+    softwares_clt = get_softwares_clt()
+    pipeline = [
+        {
+            "$project": {
+                "_id": 0,
+                "listSize": { "$size": "$vulnerabilities" }
+            }
+        },
+        {
+            "$match": {
+                "listSize": { "$ne": 0 }
+            }
+        }
+    ]
+    
+    softwares_vuln = list(softwares_clt.aggregate(pipeline))
+    total_vulnerabilities = sum(doc['listSize'] for doc in softwares_vuln)
+    return total_vulnerabilities

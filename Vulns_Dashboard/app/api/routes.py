@@ -20,6 +20,7 @@ def get_all_data():
         "impact_vulnerabilities": impact_vulnerabilities(vulnerable_softwares),
         "recent_vulnerabilities_qty": recent_vulnerabilities_qty(str(current_year)),
         "most_vulnerable_machine": most_vulnerable_machine(),
+        "total_vulnerabilities" : get_total_vulnerabilities(),
         "qty_critical_vulns": qty_critical_vulns(vulnerable_softwares),
         "top_ten_riskiest_vulnerabilities": chart_top_ten_riskiest_vulnerabilities(),
         "qty_vulns_severity_across_time": qty_vulns_severity_across_time(vulnerable_softwares),

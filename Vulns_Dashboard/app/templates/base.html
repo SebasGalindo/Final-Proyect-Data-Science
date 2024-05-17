@@ -2,11 +2,9 @@
 <html lang="es" class="h-full bg-gray-100">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
     <title>Panel de Vulnerabilidades</title>
   </head>
   <body class="h-full">
@@ -24,5 +22,4 @@
 
     {% block scripts %}{% endblock %}
   </body>
-  
 </html>

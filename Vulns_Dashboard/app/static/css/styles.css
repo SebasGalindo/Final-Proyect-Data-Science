@@ -1,0 +1,7 @@
+.fixed-height {
+    height: 100px; /* Ajusta esta altura según sea necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
