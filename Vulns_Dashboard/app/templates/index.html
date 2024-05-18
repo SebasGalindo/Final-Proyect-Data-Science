@@ -2,73 +2,79 @@
 {% include "header.html" %}
 
 {% block content %}
-<div class="bg-white mx-auto py-15 sm:py-15">
-  <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-    {% include "stats_section.html" %}
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-      <div class="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-4">
-        <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
-          <div class="px-6 py-4">
-            <div id="plot0" class="chart_card w-full h-120"></div>
-            <div class="pt-4 text-center">
-              <p class="text-gray-700 text-base">Machines with Most Vulnerabilities</p>
+<div class="bg-white mx-auto py-15 sm:py-15" id="dashboard">
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        {% include "stats_section.html" %}
+        <div class="border-t border-gray-300 my-4"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+            <div class="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-4">
+                <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
+                    <div class="px-6 py-4">
+                        <div id="plot0" class="chart_card w-full h-120"></div>
+                        <div class="pt-4 text-center">
+                            <p class="text-gray-700 text-base">Machines with Most Vulnerabilities</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
-        <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
-          <div class="px-6 py-4">
-            <div id="plot1" class="chart_card w-full h-120"></div>
-            <div class="pt-4 text-center">
-              <p class="text-gray-700 text-base">Most Vulnerable Software</p>
+            <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
+                <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
+                    <div class="px-6 py-4">
+                        <div id="plot1" class="chart_card w-full h-120"></div>
+                        <div class="pt-4 text-center">
+                            <p class="text-gray-700 text-base">Most Vulnerable Software</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
-        <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
-          <div class="px-6 py-4">
-            <div id="plot2" class="chart_card w-full h-120"></div>
-            <div class="pt-4 text-center">
-              <p class="text-gray-700 text-base">Impact of Vulnerabilities</p>
+            <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
+                <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
+                    <div class="px-6 py-4">
+                        <div id="plot2" class="chart_card w-full h-120"></div>
+                        <div class="pt-4 text-center">
+                            <p class="text-gray-700 text-base">Impact of Vulnerabilities</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
-        <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
-          <div class="px-6 py-4">
-            <div id="plot3" class="chart_card w-full h-120"></div>
-            <div class="pt-4 text-center">
-              <p class="text-gray-700 text-base">Top Ten Riskiest Vulnerabilities</p>
+            <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
+                <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
+                    <div class="px-6 py-4">
+                        <div id="plot3" class="chart_card w-full h-120"></div>
+                        <div class="pt-4 text-center">
+                            <p class="text-gray-700 text-base">Top Ten Riskiest Vulnerabilities</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
-        <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
-          <div class="px-6 py-4">
-            <div id="plot4" class="chart_card w-full h-120"></div>
-            <div class="pt-4 text-center">
-              <p class="text-gray-700 text-base">CVSS v3.0/v3.1 Vulnerabilities</p>
+            <div class="col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2">
+                <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
+                    <div class="px-6 py-4">
+                        <div id="plot4" class="chart_card w-full h-120"></div>
+                        <div class="pt-4 text-center">
+                            <p class="text-gray-700 text-base">CVSS v3.0/v3.1 Vulnerabilities</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-4">
-        <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
-          <div class="px-6 py-4">
-            <div id="plot5" class="chart_card w-full h-120"></div>
-            <div class="pt-4 text-center">
-              <p class="text-gray-700 text-base">Number of Vulnerabilities by Severity Across</p>
+            <div class="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-4">
+                <div class="max-w-full mx-auto rounded overflow-hidden shadow-lg">
+                    <div class="px-6 py-4">
+                        <div id="plot5" class="chart_card w-full h-120"></div>
+                        <div class="pt-4 text-center">
+                            <p class="text-gray-700 text-base">Number of Vulnerabilities by Severity Across</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      
+        <div class="border-t border-gray-300 my-4"></div>
+        <div class="flex justify-center">
+            <button id="downloadReport" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Download Report
+            </button>
+        </div>
     </div>
-  </div>
 </div>
 {% endblock %}
 
@@ -78,21 +84,45 @@
 
 {% block scripts %}
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-  const chartData = {{ chart_data | safe }};
-  function resizeCharts() {
-    {% for chart in chart_data %}
-    {
-      const chartJSON = JSON.parse(chartData[{{ loop.index0 }}]);
-      const layout = chartJSON.layout || {};
-      layout.autoresize = true;
-      layout.height = document.getElementById('plot{{ loop.index0 }}').clientHeight;
-      layout.width = document.getElementById('plot{{ loop.index0 }}').clientWidth;
-      Plotly.react('plot{{ loop.index0 }}', chartJSON.data, layout, {responsive: true});
+    const chartData = {{ chart_data | safe }};
+    function resizeCharts() {
+        {% for chart in chart_data %}
+        {
+            const chartJSON = JSON.parse(chartData[{{ loop.index0 }}]);
+            const layout = chartJSON.layout || {};
+            layout.autoresize = true;
+            layout.height = document.getElementById('plot{{ loop.index0 }}').clientHeight;
+            layout.width = document.getElementById('plot{{ loop.index0 }}').clientWidth;
+            Plotly.react('plot{{ loop.index0 }}', chartJSON.data, layout, {responsive: true});
+        }
+        {% endfor %}
     }
-    {% endfor %}
-  }
-  window.onresize = resizeCharts;
-  resizeCharts();
+    window.onresize = resizeCharts;
+    resizeCharts();
+
+    const date = new Date();
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses son de 0-11, así que se suma 1
+    const year = date.getFullYear();
+    const nameDoc = "dashboard_" + day + month + year + ".pdf";
+
+    document.getElementById("downloadReport").addEventListener("click", function() {
+        const { jsPDF } = window.jspdf;
+        const dashboardElement = document.getElementById("dashboard");
+
+        html2canvas(dashboardElement).then((canvas) => {
+            const imgData = canvas.toDataURL("image/png");
+            const pdf = new jsPDF("p", "mm", "a4");
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+            pdf.save(nameDoc);
+        });
+    });
 </script>
 {% endblock %}

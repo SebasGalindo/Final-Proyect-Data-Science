@@ -538,7 +538,6 @@ def radial_chart_cves_version3():
                 tickvals=[0.2, 0.4, 0.6, 0.8, 1.0]
             )
         ),
-        title="CVSS v3.0/v3.1 Vulnerabilities"
     )
     
     return pio.to_json(fig)

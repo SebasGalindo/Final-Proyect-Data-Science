@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="es" class="h-full bg-gray-100">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
     <title>Panel de Vulnerabilidades</title>
-  </head>
-  <body class="h-full">
+</head>
+<body class="h-full">
     <div class="min-h-full">
-      {% block header %}{% endblock %}
+        {% block header %}{% endblock %}
 
-      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        {% block content %}
-        <!-- Contenido predeterminado que puede ser sobreescrito -->
-        {% endblock %}
-      </div>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            {% block content %}
+            <!-- Contenido predeterminado que puede ser sobreescrito -->
+            {% endblock %}
+        </div>
     </div>
 
     {% block footer %}{% endblock %}
 
     {% block scripts %}{% endblock %}
-  </body>
+</body>
 </html>
