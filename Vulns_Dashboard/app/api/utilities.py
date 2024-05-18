@@ -45,10 +45,7 @@ def chart_top_ten_vulnerable_softwares():
     
     # Create pie chart using Plotly
     fig = px.pie(names=names, values=vulnerabilities)
-    # Update layout
-    fig.update_layout(
-        title="Most Vulnerable Software",
-    )
+
     # Return the JSON representation of the plot
     return pio.to_json(fig)
 
@@ -103,7 +100,6 @@ def impact_vulnerabilities(vulnerable_softwares):
 
     # Update layout
     fig.update_layout(
-        title="Impact of Vulnerabilities",
         xaxis_title="Number of vulnerabilities",
         yaxis_title="Impact"
     )
@@ -245,7 +241,6 @@ def chart_top_ten_riskiest_vulnerabilities():
     
     # Update layout
     fig.update_layout(
-        title="Top Ten Riskiest Vulnerabilities",
         xaxis_title="CVE IDENTIFIER",
         yaxis_title="SCORE",
         barmode='group',
@@ -351,7 +346,6 @@ def qty_vulns_severity_across_time(vulnerable_softwares):
 
     # Update layout
     fig.update_layout(
-        title="Number of Vulnerabilities by Severity Across Time",
         xaxis_title="Year",
         yaxis_title="Number of Vulnerabilities",
         xaxis_tickangle=-45,
@@ -408,7 +402,6 @@ def donut_chart_machines_most_vuln():
     ))
 
     fig.update_layout(
-        title_text="Machines with Most Vulnerabilities",
         annotations=[dict(text='Machines', x=0.5, y=0.5, font_size=20, showarrow=False)]
     )
     
