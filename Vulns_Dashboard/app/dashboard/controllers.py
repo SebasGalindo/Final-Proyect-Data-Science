@@ -26,8 +26,8 @@ def dashboard_home():
     total_vulnerabilities = data.get("total_vulnerabilities", 0)
 
     chart_data = [
-        machines_most_vuln_chart ,top_ten_chart, impact_chart, riskiest_chart, 
-        severity_across_time_chart, cves_version3_chart
+        machines_most_vuln_chart ,top_ten_chart, impact_chart, riskiest_chart, cves_version3_chart,
+        severity_across_time_chart
     ]
 
     return render_template('index.html', chart_data=chart_data, recent_vulns_qty=recent_vulns_qty, current_year=current_year, most_vulnerable_machine=most_vulnerable_machine, qty_critical_vulns=qty_critical_vulns,total_vulnerabilities=total_vulnerabilities)
